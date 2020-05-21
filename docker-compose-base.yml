@@ -13,9 +13,9 @@ services:
     networks:
       - ms_network
 
-  mongo:
+  mongoDB:
     image: mongo
-    container_name: mongo
+    container_name: mongoDB
     volumes:
       - ~/datadir/mongo:/data/db
     ports:

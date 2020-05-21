@@ -61,9 +61,9 @@ services:
       - 9201:9201
     depends_on:
       - ms_mysql
-      - mongo
+      - mongoDB
     environment:
-      WAIT_HOSTS: mongo:27017
+      WAIT_HOSTS: mongoDB:27017
     networks:
       - ms_network
   ms_commerce_cart:
@@ -78,7 +78,7 @@ services:
       - 9204:9204
     depends_on:
       - ms_mysql
-      - mongo
+      - mongoDB
     networks:
       - ms_network
   ms_commerce_admin:
@@ -88,7 +88,7 @@ services:
     restart: always
     environment:
       # - NODE_ENV=local
-      WAIT_HOSTS: mongo:27017
+      WAIT_HOSTS: mongoDB:27017
     volumes:
       - ./e-Commerce-Admin/:/usr/src/app
       - /usr/src/app/node_modules
@@ -96,7 +96,7 @@ services:
       - 3002:3002
       - 9202:9202
     depends_on:
-      - mongo
+      - mongoDB
     networks:
       - ms_network
   ms_commerce_client:

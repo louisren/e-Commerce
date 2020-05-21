@@ -3,7 +3,7 @@
 # node & mysql
 export NODE_ENV="dev"
 export PORT="3001"
-export MONGO_HOST="mongo"
+export MONGO_HOST="mongoDB"
 export MONGO_PORT="27017"
 export MONGO_USERNAME="root"
 export MONGO_PASSWORD="root"
