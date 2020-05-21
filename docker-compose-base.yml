@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  ms_mysql:
+    container_name: ms_mysql
+    image: mysql:5.7
+    volumes:
+      - ~/datadir/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+      - 33060:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - ms_network
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    volumes:
+      - ~/datadir/mongo:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - ms_network
+
+  neo4j:
+    container_name: ms_neo4j
+    image: neo4j:latest
+    environment:
+      - NEO4J_AUTH=none
+    ports:
+      - 7474:7474
+      - 7687:7687
+    networks:
+      - ms_network
+
+networks:
+  ms_network:
+    driver: bridge
+    name: ms_network
