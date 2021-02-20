@@ -3,7 +3,7 @@
 # node & mysql
 export NODE_ENV="dev"
 export PORT="3002"
-export MONGOURL="mongodb://mongo/blabla"
+export MONGOURL="mongodb://mongoDB:27017/blabla"
 export EXPRESS_SESSION_SECRET="######################"
 export F_CLIENTID="###################"
 export F_CLIENTSECRET="###########################"
