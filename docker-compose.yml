@@ -1,5 +1,6 @@
 version: "3.8"
 services:
+
   gateway:
     image: nginx:1.11
     ports:
@@ -50,7 +51,7 @@ services:
   ms_commerce_auth:
     container_name: ms_commerce_auth
     build: ./e-Commerce-Auth/
-    image: e-commerce-auth
+    image: louisren/e-commerce-auth
     restart: always
     volumes:
       - ./e-Commerce-Auth/:/usr/src/app
@@ -68,7 +69,7 @@ services:
   ms_commerce_cart:
     container_name: ms_commerce_cart
     build: ./e-Commerce-Cart/
-    image: e-commerce-cart
+    image: louisren/e-commerce-cart
     volumes:
       - ./e-Commerce-Cart/:/usr/src/app
       - /usr/src/app/node_modules
@@ -82,7 +83,7 @@ services:
       - ms_network
   ms_commerce_admin:
     build: ./e-Commerce-Admin/
-    image: e-commerce-admin
+    image: louisren/e-commerce-admin
     container_name: ms_commerce_admin
     restart: always
     environment:
@@ -100,7 +101,7 @@ services:
       - ms_network
   ms_commerce_client:
     build: ./e-Commerce-Client/
-    image: e-commerce-client
+    image: louisren/e-commerce-client
     container_name: ms_commerce_client
     environment:
       - NODE_ENV=local
