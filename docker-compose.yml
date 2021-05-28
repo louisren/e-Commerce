@@ -1,6 +1,5 @@
 version: "3.8"
 services:
-
   gateway:
     image: nginx:1.11
     ports:
@@ -127,10 +126,10 @@ services:
       - ./de.typescript.fiori3/:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - 3004:3004
+      - 3005:3005
     networks:
       - ms_network
-      
+
 networks:
   ms_network:
     driver: bridge
