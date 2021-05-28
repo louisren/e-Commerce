@@ -51,7 +51,7 @@ services:
   ms_commerce_auth:
     container_name: ms_commerce_auth
     build: ./e-Commerce-Auth/
-    image: louisren/e-commerce-auth
+    image: e-commerce-auth
     restart: always
     volumes:
       - ./e-Commerce-Auth/:/usr/src/app
@@ -66,10 +66,11 @@ services:
       WAIT_HOSTS: mongoDB:27017
     networks:
       - ms_network
+
   ms_commerce_cart:
     container_name: ms_commerce_cart
     build: ./e-Commerce-Cart/
-    image: louisren/e-commerce-cart
+    image: e-commerce-cart
     volumes:
       - ./e-Commerce-Cart/:/usr/src/app
       - /usr/src/app/node_modules
@@ -81,9 +82,10 @@ services:
       - mongoDB
     networks:
       - ms_network
+
   ms_commerce_admin:
     build: ./e-Commerce-Admin/
-    image: louisren/e-commerce-admin
+    image: e-commerce-admin
     container_name: ms_commerce_admin
     restart: always
     environment:
@@ -99,9 +101,10 @@ services:
       - mongoDB
     networks:
       - ms_network
+
   ms_commerce_client:
     build: ./e-Commerce-Client/
-    image: louisren/e-commerce-client
+    image: e-commerce-client
     container_name: ms_commerce_client
     environment:
       - NODE_ENV=local
@@ -115,6 +118,19 @@ services:
       - ms_commerce_auth
     networks:
       - ms_network
+
+  typescriptfiori3:
+    build: ./de.typescript.fiori3/
+    image: e-commerce-client
+    container_name: typescriptfiori3
+    volumes:
+      - ./de.typescript.fiori3/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3004:3004
+    networks:
+      - ms_network
+      
 networks:
   ms_network:
     driver: bridge
