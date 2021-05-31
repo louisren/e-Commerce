@@ -1,5 +1,7 @@
 FROM docker:latest
 
+RUN docker -v
+
 RUN docker pull docker/compose
 
 # check installation
