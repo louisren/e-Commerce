@@ -1,0 +1,8 @@
+{
+	"generator-easy-ui5": {
+		"projectname": "TsApp",
+		"namespace": "de.typescript.fiori3",
+		"viewtype": "XML",
+		"viewname": "Main"
+	}
+}

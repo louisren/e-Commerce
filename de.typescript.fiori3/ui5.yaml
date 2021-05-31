@@ -1,0 +1,10 @@
+specVersion: '2.3'
+metadata:
+  name: TsApp
+framework:
+  name: OpenUI5
+  version: 1.89.1
+type: application
+
+
+
