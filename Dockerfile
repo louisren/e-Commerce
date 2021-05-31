@@ -1,6 +1,6 @@
 FROM docker:latest
 
-RUN pip3 install docker-compose
+RUN docker pull docker/compose
 
 # check installation
 RUN docker-compose -v
