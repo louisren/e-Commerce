@@ -1,0 +1,20 @@
+ID: TsApp
+_schema-version: 3.2.0
+description: Enter description here
+version: 0.0.1
+
+modules:
+  - name: TsApp
+    type: nodejs
+    path: dist
+    parameters:
+      disk-quota: 512M
+      memory: 512M
+    requires:
+      - name: dest_TsApp
+resources:
+  - name: dest_TsApp
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service

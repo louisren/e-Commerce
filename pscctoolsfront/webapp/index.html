@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PSCC Best Practices Tools</title>
+</head>
+
+<body class="sapUiBody" id="content">
+
+</body>
+<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+	data-sap-ui-libs="sap.m, sap.ui.layout" data-sap-ui-theme="sap_fiori_3" data-sap-ui-resourceroots='{
+								"pscctoolsfront.TsApp": "./"
+						}' data-sap-ui-compatVersion="edge" data-sap-ui-language="en" data-sap-ui-async="true"
+	data-sap-ui-frameOptions="trusted" data-sap-ui-preload="sync"
+	data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"></script>
+<script>
+	var oStartupParameters = {
+		webResourceURI: './',
+		backendContextURI: './',
+	}
+	sap.ui.getCore().attachInit(function () {
+		sap.ui.require(
+			['pscctoolsfront/TsApp/localService/mockserver', 'sap/m/Shell', 'sap/ui/core/ComponentContainer'],
+			function (Mockserver, Shell, ComponentContainer) {
+				const mockserver = new Mockserver()
+				mockserver.init()
+				new Shell({
+					appWidthLimited: false,
+					app: new sap.ui.core.ComponentContainer({
+						height: '100%',
+						name: 'pscctoolsfront.TsApp',
+						settings: {
+							componentData: { startupParameters: oStartupParameters },
+						},
+					}),
+				}).placeAt('content')
+			}
+		)
+	})
+</script>
+
+</html>

@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   gateway:
-    image: nginx:1.11
+    image: nginx:latest
     ports:
       - 80:80
       - 443:443
@@ -120,13 +120,25 @@ services:
 
   typescriptfiori3:
     build: ./de.typescript.fiori3/
-    image: e-commerce-client
+    image: de.typescript.fiori3
     container_name: typescriptfiori3
     volumes:
       - ./de.typescript.fiori3/:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - 3006:3006
+    networks:
+      - ms_network
+
+  pscctoolsfront:
+    build: ./pscctoolsfront/
+    image: pscctoolsfront
+    container_name: pscctoolsfront
+    volumes:
+      - ./pscctoolsfront/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3008:3008
     networks:
       - ms_network
 

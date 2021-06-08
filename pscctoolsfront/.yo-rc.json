@@ -1,0 +1,8 @@
+{
+	"generator-easy-ui5": {
+		"projectname": "TsApp",
+		"namespace": "pscctoolsfront",
+		"viewtype": "XML",
+		"viewname": "Main"
+	}
+}

@@ -11,7 +11,6 @@ RUN  npm install
 # RUN  npm audit fix
 # Run npm install --global grpc --unsafe-perm
 
-EXPOSE 5000 9202
-# CMD [ "npm", "run", "watchserver" ]
-CMD [ "npm", "run", "start:dist" ]
+EXPOSE 3008
 
+CMD [ "npm", "run", "start:dist" ]
