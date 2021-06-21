@@ -1,0 +1,8 @@
+{
+	"generator-easy-ui5": {
+		"projectname": "TsApp",
+		"namespace": "bptfront",
+		"viewtype": "XML",
+		"viewname": "Main"
+	}
+}

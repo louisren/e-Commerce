@@ -3,7 +3,7 @@
   "author": {
     "name": "Louis Ren",
     "email": "louis.ren@sap.com",
-    "url": "https://github.wdf.sap.corp/i075006/de.typescript.fiori3.git"
+    "url": "https://github.wdf.sap.corp/i075006/bptfront.git"
   },
   "version": "1.0.0",
   "license": "MIT",
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "ui5 serve --config ui5.yaml --accept-remote-connections true -o index.html",
-    "start:dist": "serve -p 3006 dist",
+    "start:dist": "serve -p 3008 dist",
     "serve": "ui5 serve",
     "test": "npm run lint && npm run karma",
     "testlocal": "npm run karmalocal",

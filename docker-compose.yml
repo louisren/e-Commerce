@@ -130,12 +130,12 @@ services:
     networks:
       - ms_network
 
-  pscctoolsfront:
-    build: ./pscctoolsfront/
-    image: pscctoolsfront
-    container_name: pscctoolsfront
+  bptfront:
+    build: ./bptfront/
+    image: bptfront
+    container_name: bptfront
     volumes:
-      - ./pscctoolsfront/:/usr/src/app
+      - ./bptfront/:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - 3008:3008

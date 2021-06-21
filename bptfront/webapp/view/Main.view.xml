@@ -1,0 +1,45 @@
+<mvc:View
+		controllerName="bptfront.TsApp.controller.Main"
+		displayBlock="true"
+		xmlns="sap.m"
+   		xmlns:uxap="sap.uxap"
+		xmlns:mvc="sap.ui.core.mvc">
+		<uxap:ObjectPageLayout>
+	<uxap:sections>
+      <uxap:ObjectPageSection title="Home"
+        id="solutionAD">
+        <uxap:subSections>
+          <uxap:ObjectPageSubSection>
+            <uxap:blocks>
+              <FlexBox wrap="Wrap">
+                <items>
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop earpHomepageTile"
+                    id="solutionScenarioTile"
+                    wrappingType="Normal"
+                    header="Auto Mail"
+                    subheader="Auto Mail"
+                    press=".autoMailPressed">
+                    <TileContent >
+                      <ImageContent src="sap-icon://email" />
+                    </TileContent>
+                  </GenericTile>
+
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop earpHomepageTile"
+                    id="customerIssueListTile"
+                    wrappingType="Normal"
+                    header="Customer Issue List"
+                    subheader="Issue List"
+                    press="customerIssueList">
+                    <TileContent >
+                      <ImageContent src="sap-icon://customer" />
+                    </TileContent>
+                  </GenericTile>
+                </items>
+              </FlexBox>
+            </uxap:blocks>
+          </uxap:ObjectPageSubSection>
+        </uxap:subSections>
+      </uxap:ObjectPageSection>
+    </uxap:sections>
+  </uxap:ObjectPageLayout>
+</mvc:View>
